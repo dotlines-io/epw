@@ -3,10 +3,10 @@
 
 namespace Dotlines\EPW;
 
-use Dotlines\Core\Request;
-
 use Dotenv\Dotenv;
+
 use Dotlines\Core\Helpers\RequestHelper;
+use Dotlines\Core\Request;
 
 class ChargeRequest extends Request
 {
@@ -205,7 +205,6 @@ class ChargeRequest extends Request
         string $ship_postcode = '',
         string $ship_country = ''
     ) {
-
         Dotenv::createImmutable(__DIR__ . '\\..')->safeLoad();
 
         $this->url = (array_key_exists('EPW_SERVER_URL', $_ENV) ? (string)$_ENV['EPW_SERVER_URL'] : (string)getenv('EPW_SERVER_URL'));
@@ -293,67 +292,67 @@ class ChargeRequest extends Request
             'cus_phone' => $this->cus_phone,
         ];
 
-        if (!empty($this->ipn_url)) {
+        if (! empty($this->ipn_url)) {
             $params['ipn_url'] = $this->ipn_url;
         }
-        if (!empty($this->opt_a)) {
+        if (! empty($this->opt_a)) {
             $params['opt_a'] = $this->opt_a;
         }
-        if (!empty($this->opt_b)) {
+        if (! empty($this->opt_b)) {
             $params['opt_b'] = $this->opt_b;
         }
-        if (!empty($this->opt_c)) {
+        if (! empty($this->opt_c)) {
             $params['opt_c'] = $this->opt_c;
         }
-        if (!empty($this->opt_d)) {
+        if (! empty($this->opt_d)) {
             $params['opt_d'] = $this->opt_d;
         }
-        if (!empty($this->payment_type)) {
+        if (! empty($this->payment_type)) {
             $params['payment_type'] = $this->payment_type;
         }
-        if (!empty($this->amount_vat)) {
+        if (! empty($this->amount_vat)) {
             $params['amount_vat'] = $this->amount_vat;
         }
-        if (!empty($this->amount_vatRatio)) {
+        if (! empty($this->amount_vatRatio)) {
             $params['amount_vatRatio'] = $this->amount_vatRatio;
         }
-        if (!empty($this->amount_tax)) {
+        if (! empty($this->amount_tax)) {
             $params['amount_tax'] = $this->amount_tax;
         }
-        if (!empty($this->amount_taxRatio)) {
+        if (! empty($this->amount_taxRatio)) {
             $params['amount_taxRatio'] = $this->amount_taxRatio;
         }
-        if (!empty($this->amount_processingfee)) {
+        if (! empty($this->amount_processingfee)) {
             $params['amount_processingfee'] = $this->amount_processingfee;
         }
-        if (!empty($this->amount_processingfee_ratio)) {
+        if (! empty($this->amount_processingfee_ratio)) {
             $params['amount_processingfee_ratio'] = $this->amount_processingfee_ratio;
         }
-        if (!empty($this->cus_add2)) {
+        if (! empty($this->cus_add2)) {
             $params['cus_add2'] = $this->cus_add2;
         }
-        if (!empty($this->cus_fax)) {
+        if (! empty($this->cus_fax)) {
             $params['cus_fax'] = $this->cus_fax;
         }
-        if (!empty($this->ship_name)) {
+        if (! empty($this->ship_name)) {
             $params['ship_name'] = $this->ship_name;
         }
-        if (!empty($this->ship_add1)) {
+        if (! empty($this->ship_add1)) {
             $params['ship_add1'] = $this->ship_add1;
         }
-        if (!empty($this->ship_add2)) {
+        if (! empty($this->ship_add2)) {
             $params['ship_add2'] = $this->ship_add2;
         }
-        if (!empty($this->ship_city)) {
+        if (! empty($this->ship_city)) {
             $params['ship_city'] = $this->ship_city;
         }
-        if (!empty($this->ship_state)) {
+        if (! empty($this->ship_state)) {
             $params['ship_state'] = $this->ship_state;
         }
-        if (!empty($this->ship_postcode)) {
+        if (! empty($this->ship_postcode)) {
             $params['ship_postcode'] = $this->ship_postcode;
         }
-        if (!empty($this->ship_country)) {
+        if (! empty($this->ship_country)) {
             $params['ship_country'] = $this->ship_country;
         }
         // $client = new Client();

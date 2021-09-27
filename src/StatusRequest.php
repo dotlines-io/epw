@@ -3,10 +3,10 @@
 
 namespace Dotlines\EPW;
 
-use Dotlines\Core\Request;
-
 use Dotenv\Dotenv;
+
 use Dotlines\Core\Helpers\RequestHelper;
+use Dotlines\Core\Request;
 
 class StatusRequest extends Request
 {
